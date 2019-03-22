@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задачник</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	</head>
+<style type="text/css">	
+@font-face
+{
+font-family: "OpenSans";
+ 
+src: url('fonts/OpenSans-Regular.ttf');
+ 
+font-weight: normal;
+ 
+font-style: normal;
+}	
+</style>	
+	
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" >
+$(document).ready(function(){
+
+//контроль третьей части
+$( window ).resize(function() 
+{
+	var $window = $(window);
+	var $windowsize = $window.width();
+	if ($windowsize < 1088)
+	{
+	$('#thirdpart').html('<img src="images/choose.png" alt="choose"> <img src="images/arrow.png" alt="choose"> <img src="images/buy.png" alt="buy"> <img src="images/arrow.png" alt="choose"> <p style="margin-top:-20px;">Выбирай</p> <p></p><p style="margin-top:-20px;">Покупай</p><p></p><img src="images/eat.png" alt="eat"><img src="images/arrow.png" alt="choose"><img src="images/thin.png" alt="thin"><img src="images/arrow.png" alt="choose"><p style="margin-top:-20px;">Ешь</p><p></p><p style="margin-top:-20px;">Худей</p><p></p>');
+	}
+	
+	else $('#thirdpart').html('<img src="images/choose.png" alt="choose"> <img style="margin-top: 20px;" src="images/arrow.png" alt="choose"><img src="images/buy.png" alt="buy"><img style="margin-top: 20px" src="images/arrow.png" alt="choose"><img src="images/eat.png" alt="eat"><img style="margin-top: 20px;" src="images/arrow.png" alt="choose"><img src="images/thin.png" alt="thin"><p class="undertext" style="margin-right: 100px;">Выбирай</p><p><p class="undertext" style="margin-right: 140px;">Покупай</p><p><p class="undertext" style="margin-right: 160px;">Ешь</p><p><p class="undertext" >Худей</p>');
+
+});
+
+
+
+
+//наведение на кнопки сайтов
+$('#siteone, #siteoneon').mouseenter(function(){
+$('#siteoneon').css({'visibility': 'visible'});
+});
+
+$('#sitetwo, #sitetwoon').mouseenter(function(){
+$('#sitetwoon').css({'visibility': 'visible'});
+});
+
+$('#sitethree, #sitethreeon').mouseenter(function(){
+$('#sitethreeon').css({'visibility': 'visible'});
+});
+
+//сведение с кнопок
+$('#siteone, #siteoneon').mouseleave(function(){
+$('#siteoneon').css({'visibility': 'hidden'});
+});
+
+$('#sitetwo, #sitetwoon').mouseleave(function(){
+$('#sitetwoon').css({'visibility': 'hidden'});
+});
+
+$('#sitethree, #sitethreeon').mouseleave(function(){
+$('#sitethreeon').css({'visibility': 'hidden'});
+});
+
+
+
+//контроллер главной кнопки
+$('.button, .textbutton').mouseenter(function(){
+//узнаем размер экрана
+var $window = $(window);
+var $windowsize = $window.width();
+$('.textbutton').text('ПОХУДЕТЬ ЗА НЕДЕЛЮ!').css({'font-size':'22pt', 'margin-left':'270px'});
+$('.button').attr('src','images/lightedbutton.png');
+if ($windowsize < 1170)
+{
+$('.textbutton').text('ПОХУДЕТЬ ЗА НЕДЕЛЮ!').css({'font-size':'22pt', 'margin-left':'120px'});
+$('.button').attr('src','images/lightedbutton.png');
+};
+
+if ($windowsize < 780)
+{
+$('.textbutton').text('ПОХУДЕТЬ ЗА НЕДЕЛЮ!').css({'font-size':'14pt', 'margin-left':'120px'});
+$('.button').attr('src','images/lightedbutton.png');
+};
+});
+
+$('.button').mouseleave(function(){
+var $window = $(window);
+var $windowsize = $window.width();
+$('.textbutton').text('ПОХУДЕТЬ').css({'font-size':'34pt', 'margin-left':'320px'});
+$('.button').attr('src','images/greenbutton.png');
+if ($windowsize < 1170)
+{
+$('.textbutton').text('ПОХУДЕТЬ').css({'font-size':'34pt', 'margin-left':'140px'});
+$('.button').attr('src','images/greenbutton.png');
+};
+if ($windowsize < 780)
+{
+$('.textbutton').text('ПОХУДЕТЬ').css({'font-size':'22pt', 'margin-left':'140px'});
+$('.button').attr('src','images/greenbutton.png');
+};
+});
+
+//скроллы
+$("#ed").click(function() {
+	
+
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $("#secondHeader").offset().top
+		}, 2000);
+
+});
+
+$("#accia").click(function() {
+	
+
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $(".headertext").offset().top
+		}, 2000);
+
+});
+
+$("#easy").click(function() {
+	
+
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $("#bankimage").offset().top
+		}, 2000);
+
+});
+
+$("#trust").click(function() {
+	
+
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $("#trustworthy").offset().top
+		}, 2000);
+
+});
+
+$("#wetrusted").click(function() {
+	
+
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $("#trustworthy").offset().top
+		}, 2000);
+
+});
+
+//скролл указателя вниз
+$("#arrowdown").click(function() {
+	
+
+		$([document.documentElement, document.body]).animate({
+			scrollTop: $("#secondHeader").offset().top
+		}, 2000);
+
+});
+
+
+//стрелочки
+//левая стрелка
+$('#leftarrow').mouseenter(function(){
+$('#leftarrow').attr('src','images/arrowleft.png');
+});
+
+$('#leftarrow').mouseleave(function(){
+$('#leftarrow').attr('src','images/firstarrowleft.png');
+});
+//правая стрелка
+$('#rightarrow').mouseenter(function(){
+$('#rightarrow').attr('src','images/arrowright.png');
+});
+
+$('#rightarrow').mouseleave(function(){
+$('#rightarrow').attr('src','images/firstarrowright.png');
+});
+
+
+//нижние иконки
+//вк
+$('#siteonefooter, #siteoneonfooter').mouseenter(function(){
+$('#siteoneonfooter').css({'z-index':'60'});
+});
+$('#siteonefooter, #siteoneonfooter').mouseleave(function(){
+$('#siteoneonfooter').css({'z-index':'40'});
+});
+
+//ютуб
+$('#sitetwofooter, #sitetwoonfooter').mouseenter(function(){
+$('#sitetwoonfooter').css({'z-index':'60'});
+});
+$('#sitetwofooter, #sitetwoonfooter').mouseleave(function(){
+$('#sitetwoonfooter').css({'z-index':'40'});
+});
+
+//инстаграм
+$('#sitethreefooter, #sitethreeonfooter').mouseenter(function(){
+$('#sitethreeonfooter').css({'z-index':'60'});
+});
+$('#sitethreefooter, #sitethreeonfooter').mouseleave(function(){
+$('#sitethreeonfooter').css({'z-index':'40'});
+});
+
+//обработка цветов главной менюшки
+$('.textmenu').mouseenter(function(){
+$(this).css({'color':'yellow'});
+});
+
+$('.textmenu').mouseleave(function(){
+$(this).css({'color':'#b9b8b9'});
+$('#phonenumber').css({'color':'black'});
+$('#accia').css({'color':'black'});
+});
+
+//по дефолту 1 текст
+var answer =1;
+//1 текст
+var rodrigez="Для меня это реальное спасение! Никогда нет времени на еду. Прекрасно знаю, что нужно правильно питаться и находить на это время, но постоянно жертвую здоровьем. Поэтому Energy Diet - идеальная штука для меня. Нет времени заезжать в ресторан - просто покупаю пакет полуторапроцентного молока, развожукоктейль прямо в машине, выпиваю - и прощай, чувство голода. Я бодр, свеж и - появляется энергия. Видимо, energy не просто так в названии присутствует. И самое главное - это реально вкусно. Я люблю Energy Diet: капучино, шоколад, ваниль, банан. Но больше всего мне по вкусу банан и ваниль. Ну, они такие... самые натуральные... Ягодный я ещё не пробовал, но он у меня тоже есть."
+//2 текст
+var alena="Такие продукты как Energy Diet очень важны для любого человека, который занимается своим здоровьем. Полезно иметь такую помощь в рационе. Году в 2006-2007 все друзья-спортсмены из Красноярска начали пользоваться этими коктейлями, друг через друга заказывали. Нравятся больше всего шоколадный и клубничный. Мы такие, классические любим - кажется, они всегда самые вкусные. В большом городе не всегда успеваешь нормально поесть: получается как-то урывками, или вообще нет времени на обед. Начинаются проблемы с пищеварением, гастриты у женщин. Потому что девушки всегда питаются из крайности в крайность: то объедаются сладким, то на кефире сидят.";
+//3 текст
+var denis="Мне нравится, что в ED правильно сбалансированы компоненты, правильно, с точки зрения моего опыта. Например, если бы там было больше белков, мне было бы тяжелее. Если больше углеводов, тоже было бы не совсем то: когда человек ведет активный образ жизни, ему нужен строительный материал, чтобы избежать травм. Важна правильная пропорция, и это есть в Energy Diet. Продукт абсолютно сочетается с активным образом жизни, с физическими нагрузками. Например, мне не хочется сейчас идти куда-то есть – я выпил полуторную порцию коктейля и пошел кататься на велосипеде… Свой выбор я остановил на капучино (номер один для меня) и на смеси кофе с ванилью (кофе побольше, ванили поменьше). ED как продукт мне удобен. Удобен с точки зрения «быстро смешать», удобен с точки зрения «быстро съесть или выпить». И уже как фитнес-специалист я говорю, что там есть необходимые мне компоненты.";
+// 4 текст
+var kostia="Это очень подходит мне, просто идеально! Ритм жизни сумасшедший, нет времени ни на что, а Energy Diet можно приготовить быстро. Утром встал – тороплюсь, надо  бежать на тренировку, хватаю шейкер, делаю коктейль, беру все в машину. А там спокойно, не торопясь, начинаю есть. Это мой завтрак. Я заменяю один прием еды, причем получаю все витамины.";
+
+//обработка перемотки текстов и фото
+$('#rightarrow').click(function(){
+if(answer!=4){answer++;}
+else {answer=4;};
+
+if(answer==1){$('#changetext').text(rodrigez); $('#changephoto').attr('src','images/timurphoto.png'); $('#changename').text('Тимур Родригез'); $('#changecomment').html('Шоумен, певец, <br> телеведущий'); $('#eclipseone').attr('src','images/eclipse.png');  $('#ecliplsetwo').attr('src','images/ecliplseempty.png'); $('#ecliplsethree').attr('src','images/ecliplseempty.png'); $('#ecliplsefour').attr('src','images/ecliplseempty.png');  }
+
+else if(answer==2){$('#changetext').text(alena); $('#changephoto').attr('src','images/alena.png'); $('#changename').text('Алена Заварзина и Вик Уайлд'); $('#changecomment').html('Призеры Олимпийских игр-2014, сноубордисты, <br> заслуженные мастера спорта России'); $('#eclipseone').attr('src','images/ecliplseempty.png');  $('#ecliplsetwo').attr('src','images/eclipse.png'); $('#ecliplsethree').attr('src','images/ecliplseempty.png'); $('#ecliplsefour').attr('src','images/ecliplseempty.png'); }
+
+else if (answer==3){$('#changetext').text(denis); $('#changephoto').attr('src','images/denis.png'); $('#changename').text('Денис Семенихин'); $('#changecomment').html('Телеведущий, эксперт в области фитнеса<br> и правильного питания'); $('#eclipseone').attr('src','images/ecliplseempty.png');  $('#ecliplsetwo').attr('src','images/ecliplseempty.png'); $('#ecliplsethree').attr('src','images/eclipse.png'); $('#ecliplsefour').attr('src','images/ecliplseempty.png'); }
+
+else if(answer==4){$('#changetext').text(kostia); $('#changephoto').attr('src','images/kostia.png'); $('#changename').text('Костя Цзю'); $('#changecomment').html('Абсолютный чемпион мира по боксу,<br> заслуженный мастер спорта СССР'); $('#eclipseone').attr('src','images/ecliplseempty.png');  $('#ecliplsetwo').attr('src','images/ecliplseempty.png'); $('#ecliplsethree').attr('src','images/ecliplseempty.png'); $('#ecliplsefour').attr('src','images/eclipse.png'); };
+
+});
+
+$('#leftarrow').click(function(){
+if(answer!=1){answer--;}
+else {answer=1;};
+
+if(answer==1){$('#changetext').text(rodrigez); $('#changephoto').attr('src','images/timurphoto.png');    $('#changename').text('Тимур Родригез'); $('#changecomment').html('Шоумен, певец, <br> телеведущий'); $('#eclipseone').attr('src','images/eclipse.png');  $('#ecliplsetwo').attr('src','images/ecliplseempty.png'); $('#ecliplsethree').attr('src','images/ecliplseempty.png'); $('#ecliplsefour').attr('src','images/ecliplseempty.png'); }
+
+else if(answer==2){$('#changetext').text(alena); $('#changephoto').attr('src','images/alena.png'); $('#changename').text('Алена Заварзина и Вик Уайлд'); $('#changecomment').html('Призеры Олимпийских игр-2014, сноубордисты, <br> заслуженные мастера спорта России'); $('#eclipseone').attr('src','images/ecliplseempty.png');  $('#ecliplsetwo').attr('src','images/eclipse.png'); $('#ecliplsethree').attr('src','images/ecliplseempty.png'); $('#ecliplsefour').attr('src','images/ecliplseempty.png'); }
+
+else if (answer==3){$('#changetext').text(denis); $('#changephoto').attr('src','images/denis.png'); $('#changename').text('Денис Семенихин');  $('#changecomment').html('Телеведущий, эксперт в области фитнеса<br> и правильного питания'); $('#eclipseone').attr('src','images/ecliplseempty.png');  $('#ecliplsetwo').attr('src','images/ecliplseempty.png'); $('#ecliplsethree').attr('src','images/eclipse.png'); $('#ecliplsefour').attr('src','images/ecliplseempty.png'); }
+
+else if(answer==4){$('#changetext').text(kostia); $('#changephoto').attr('src','images/kostia.png'); $('#changename').text('Костя Цзю'); $('#changecomment').html('Абсолютный чемпион мира по боксу,<br> заслуженный мастер спорта СССР'); $('#eclipseone').attr('src','images/ecliplseempty.png');  $('#ecliplsetwo').attr('src','images/ecliplseempty.png'); $('#ecliplsethree').attr('src','images/ecliplseempty.png'); $('#ecliplsefour').attr('src','images/eclipse.png'); };
+
+});
+
+$(window).scroll(function() {
+if ($(this).scrollTop() > 40)
+{$('nav').css({"top": '0%'});}
+
+else{$('nav').css({"top": '2.4%'});}
+
+});
+
+//цвета
+$(window).scroll(function() {
+if ($(this).scrollTop() <= 877)
+{$('#accia').css({"color": 'yellow'});}
+
+else{$('#accia').css({"color": 'black'});}
+
+});
+
+$(window).scroll(function() {
+if ($(this).scrollTop() >= 877 && $(this).scrollTop() <=1400)
+{$('#ed').css({"color": 'yellow'});}
+
+else{$('#ed').css({"color": '#969596'});}
+
+});
+
+$(window).scroll(function() {
+if ($(this).scrollTop() >1400 && $(this).scrollTop() <= 1700)
+{$('#easy').css({"color": 'yellow'});}
+
+else{$('#easy').css({"color": '#969596'});}
+
+});
+
+$(window).scroll(function() {
+if ($(this).scrollTop() >=2000 && $(this).scrollTop() <= 3000)
+{$('#wetrusted').css({"color": 'yellow'});}
+
+else{$('#wetrusted').css({"color": '#969596'});}
+
+});
+
+
+});
+</script>	
+	
+	
+<style type="text/css">
+#siteonefooter{
+margin-top: -60px; 
+z-index: 50;
+}
+#sitetwofooter{
+margin-top: -60px; 
+margin-left: 60px;
+z-index: 50;
+}
+#sitethreefooter{
+margin-top: -60px;
+ margin-left: 120px;
+ z-index: 50;
+}
+#siteoneonfooter{
+margin-top: -60px;
+ z-index: 40;
+}
+#sitetwoonfooter{
+margin-top: -60px; 
+ margin-left: 60px; 
+ z-index: 40;
+}
+#sitethreeonfooter{
+margin-top: -60px; 
+margin-left: 120px;
+z-index: 40;
+}
+
+#leftarrow{
+margin-left: -200px;
+}
+
+#rightarrow{
+margin-left: 1300px;
+}
+
+
+#arrowdown{
+margin-bottom: -200px;
+}
+
+.headertext p
+{
+font-size: 96px;
+}
+
+.headerimage{
+position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 877px;
+z-index: 0;
+}
+.girl{
+position: absolute;
+z-index: 10;
+left: 51%;
+top: 0%;
+}
+
+.button{
+position: absolute;
+z-index: 1;
+margin-top: 54px;
+margin-left: 240px;
+cursor: pointer;
+}
+
+#changephoto{
+position: relative;
+margin-bottom: 3px;
+left: 45%; 
+z-index: 50;
+cursor: pointer;
+}
+
+.textbutton{
+position: absolute;
+z-index: 1;
+font-family: OpenSans;
+font-size: 34pt;
+color: white;
+margin-left: 320px;
+margin-top: 74px;
+cursor: pointer;
+}
+
+nav{
+position: fixed;
+background-color: white;
+width: 78%;
+left: 11.2%;
+top: 2.4%;
+height: 95px;
+margin-left: auto;
+margin-right: auto;
+z-index: 200;
+}
+
+#strawberry{
+margin-left: -80px;
+cursor: pointer;
+float: left; 
+margin-top: 0px;
+}
+
+#underheader{font-size: 28pt;}
+
+.menucontents{
+position: relative;
+top: 0%;
+display: inline-block;
+font-size: 13pt;
+font-family: OpenSans;
+cursor: pointer;
+color: #969596;
+}
+
+.menucontents:hover{
+color: yellow;
+}
+
+#accia{
+color: black;
+margin-left: 64px;
+}
+#accia:hover{
+color: yellow;
+}
+
+.textmenu{
+position: relative;
+top: -20%;
+margin-left: 32px;
+}
+
+.headertext{
+margin-left: 236px;
+position: relative;
+color: white;
+cursor: pointer;
+}
+
+#copyright{
+font-family: OpenSans;
+font-size: 13pt; 
+font-style: Regular;
+cursor: pointer;
+color: #686768;
+margin-left: 44.5%;
+margin-top: -81px;
+}
+
+.imagessites{
+z-index: 50;
+position: absolute;
+margin-top: 190px;
+display: inline-block;
+left: 80%;
+cursor: pointer;
+}
+
+.imagessitesflags{
+z-index: 60;
+position: absolute;
+margin-top: 190px;
+display: inline-block;
+left: 80%;
+cursor: pointer;
+visibility: hidden;
+}
+
+#secondHeader{
+position: relative;
+font-size: 28pt;
+font-family: OpenSans;
+margin-top: 530px;
+margin-left: auto;
+text-align: center;
+color: #282528;
+cursor: pointer;
+}
+
+#secondHeader:before{
+display: inline-block;
+content: url(images/shape.png);
+margin-right: 27px;
+vertical-align: 30%;
+}
+
+#secondHeader:after{
+display: inline-block;
+content: url(images/shape.png);
+margin-left: 27px;
+margin-bottom: 10px;
+vertical-align: middle;
+vertical-align: 30%;
+}
+
+
+.secondpart{
+position: relative;
+background-color: #ffffff;
+vertical-align: middle;
+}
+
+#bankimage{
+display: block;
+position: relative;
+margin: auto;
+cursor: pointer;
+width: 500px;
+margin-top: 120px;
+height: 600px;
+}
+
+#changename{
+position: relative; 
+cursor: pointer;
+text-align: center; 
+color: #282528;
+}
+
+#changecomment{
+position: relative; 
+cursor: pointer; 
+text-align: center;
+color: #646464;
+}
+
+#photoback{
+position: relative;
+ left: 45%;
+ z-index: 40;
+ margin-left: -170px;
+ margin-top: 100px;
+}
+
+.leftbankpart{
+position: relative;
+left: 10%;
+margin-top: -650px;
+margin-left: 80px;
+width: 20%;
+}
+
+.h2textblock{
+position: relative; 
+font-size: 22pt;
+font-family: OpenSans; 
+cursor: pointer;
+}
+
+.tower{
+position: relative;
+left: 10%;
+margin-top: -600px;
+}
+
+.rightbankpart{
+position: relative;
+left: 70%;
+margin-top: -650px;
+margin-left: 80px;
+width: 20%;
+}
+
+.towerright{
+position: relative;
+left: 70%;
+margin-top: -600px;
+}
+
+#thirdpart{
+width: 60%;
+position: relative;
+left: 25%;
+cursor: pointer;
+display: grid; 
+grid-template-rows: 220px 40px;
+grid-template-columns:  180px 40px  180px 40px  180px 40px  180px;
+}
+
+
+
+#thirdpart p{
+font-size: 24pt;
+font-family: OpenSans;
+color: #6b6b6b;
+margin-left: 5px;
+display: inline-block;
+margin-right: 132px;
+}
+
+#trusttext{
+position: relative;
+margin-top: 70px;
+font-size: 18pt;
+font-family: OpenSans;
+left: 20%;
+cursor: pointer;
+width: 60%;
+line-height: 1.5em;
+height: 270px;
+margin-right: 0px;
+}
+
+#circles{
+position: relative;
+margin-top: 30px;
+width: 85px;
+margin: auto;
+cursor: pointer;
+}
+
+#circles image{
+display: inline-block;
+}
+
+#kavich{
+position: relative; 
+width: 100px; 
+margin:auto;
+}
+
+#ecliplsetwo{
+
+}
+
+#carrot{margin-left: -20px;}
+
+.sticky{
+position: fixed;
+margin-top: 40px;
+}
+
+.footer{
+height: 344px;
+width: 100%;
+background-color: #ffffff;
+}
+
+.textmenu:hover{
+color: yellow;
+}
+
+#phonenumber{
+color: black;
+font-size: 23pt;
+}
+
+#itseasy{
+margin-top: 220px;
+}
+
+<!-- это управление банкой-->
+#whatised{
+display: inline-grid;
+grid-template-areas: left bank right;
+
+}
+
+#whatised p{font-size: 14pt;}
+
+#leftpart{
+margin-top: 100px;
+grid-area: left;
+}
+
+#bankimage{
+grid-area: bank;
+}
+
+#rightpart{
+position: relative;
+margin-top: -400px;
+grid-area: right;
+}
+
+@media screen and (max-width: 1557px)
+{
+#rightpart{margin-top: -400px;}
+}
+
+@media screen and (max-width: 1400px)
+{
+#rightpart p{font-size: 10pt;}
+#rightpart h{font-size: 14pt;}
+#leftpart p{font-size: 10pt;}
+#leftpart h{font-size: 14pt;}
+.towerright{left: 65%;}
+#strawberry{margin-top: -40px;}
+#coffee{margin-left: 70px;}
+}
+
+@media screen and (max-width: 1234px)
+{
+#carrot{position: relative; left: 70%; margin-right: -70px;}
+}
+
+@media screen and (max-width: 1235px)
+{
+#bankimage{position: relative; left: -7%; width: 300px;}
+}
+
+@media screen and (max-width: 1110px)
+{
+.tower{left: 10%;}
+.towerright {left:62%;}
+#banka{width: 500px;}
+}
+
+@media screen and (max-width: 1000px)
+{
+#rightpart p{font-size: 8pt;}
+#rightpart h{font-size: 10pt;}
+#leftpart p{font-size: 8pt;}
+#leftpart h{font-size: 10pt;}
+}
+
+@media screen and (max-width: 900px)
+{
+#carrot{left: 65%;}
+.tower{left: 10%;}
+#banka{width: 350px; height: 600px;}
+}
+
+@media screen and (max-width: 700px)
+{
+#banka{visibility: hidden;}
+.rightbankpart{left: 60%;}
+#coffee{left: 50%;}
+#carrot{left: 50%;}
+}
+
+@media screen and (max-width: 1700px)
+{
+#trusttext{left: 15%;}
+.textmenu{font-size: 12pt;}
+#phonenumber{font-size: 12pt;}
+}
+
+@media screen and (max-width: 1065px)
+{
+#thirdpart{
+grid-template-rows: 220px 40px 220px 40px;
+grid-template-columns:  180px 40px  180px 40px;
+}
+}
+
+@media screen and (max-width: 1620px)
+{
+#trusttext{left: 12%;}
+
+#leftarrow{margin-left: -100px;}
+
+#rightarrow{margin-left: 1200px;}
+}
+
+@media screen and (max-width: 1500px)
+{
+#changephoto{left: 44%;}
+#photoback{left:44%;}
+
+}
+
+@media screen and (max-width: 1454px)
+{
+#changetext{font-size: 12pt; width: 80%;}
+#rightarrow{margin-left: 1000px;}
+}
+
+@media screen and (max-width: 1231px)
+{
+#changephoto{left: 42%;}
+#photoback{left:42%;}
+}
+
+@media screen and (max-width: 1221px)
+{
+#changetext{font-size: 10pt; width: 70%;}
+#rightarrow{margin-left: 950px;}
+#leftarrow{margin-left: -80px;}
+}
+
+@media screen and (max-width: 1163px)
+{
+#changetext{font-size: 10pt; width: 70%;}
+#rightarrow{margin-left: 900px;}
+#leftarrow{margin-left: -80px;}
+}
+
+@media screen and (max-width: 1106px)
+{
+#changetext{font-size: 10pt; width: 60%;}
+#rightarrow{margin-left: 800px;}
+#leftarrow{margin-left: -80px;}
+}
+
+@media screen and (max-width: 1000px)
+{
+#changetext{font-size: 10pt; width: 60%;}
+#rightarrow{margin-left: 750px;}
+#leftarrow{margin-left: -80px;}
+}
+
+@media screen and (max-width: 930px)
+{
+#changetext{font-size: 8pt; width: 60%;}
+#rightarrow{margin-left: 720px; width: 50px;}
+#leftarrow{margin-left: -80px; width: 50px;}
+}
+
+@media screen and (max-width: 900px)
+{
+#changephoto{left: 40%;}
+#photoback{left:40%;}
+#changetext{font-size: 8pt; width: 60%;}
+#rightarrow{margin-left: 720px;}
+#leftarrow{margin-left: -80px;}
+}
+
+@media screen and (max-width: 890px)
+{
+#changephoto{left: 40%;}
+#photoback{left:40%;}
+#changetext{ font-size: 7pt; width: 40%;}
+#trusttext{left: 22%;}
+#rightarrow{margin-left: 600px;}
+#leftarrow{margin-left: -80px;}
+}
+
+@media screen and (max-width: 890px)
+{
+#trusttext{left: 14%;}
+
+}
+
+@media screen and (max-width: 754px)
+{
+#trusttext{left: 14%;}
+#rightarrow{margin-left: 550px;}
+}
+
+@media screen and (max-width: 712px)
+{
+#trusttext{left: 14%;}
+#rightarrow{margin-left: 500px;}
+}
+
+@media screen and (max-width: 635px)
+{
+#trusttext{left: 14%;}
+#rightarrow{margin-left: 480px;}
+#leftarrow{margin-left: -60px;}
+}
+
+@media screen and (max-width: 612px)
+{
+#changephoto{left: 37%;}
+#photoback{left: 37%;}
+#changetext{ font-size: 7pt; width: 30%;}
+#trusttext{left: 14%;}
+#rightarrow{margin-left: 420px;}
+#leftarrow{margin-left: -60px;}
+}
+
+@media screen and (max-width: 541px)
+{
+#changephoto{left: 37%;}
+#photoback{left: 37%;}
+#changetext{ font-size: 7pt; width: 30%;}
+#trusttext{left: 14%;}
+#rightarrow{margin-left: 380px;}
+#leftarrow{margin-left: -60px;}
+}
+
+
+@media screen and (max-width: 1390)
+{
+#trusttext{left: 8%;}
+}
+
+@media screen and (max-width: 1644px)
+{
+.textmenu{margin-left: 16px;}
+#accia{margin-left: 32px;}
+}
+
+@media screen and (max-width: 1474px)
+{
+.textmenu{margin-left: 12px; font-size: 12pt;}
+#accia{margin-left: 20px;}
+}
+
+@media screen and (max-width: 1428px)
+{
+.textmenu{margin-left: 12px; font-size: 9pt;}
+#accia{margin-left: 20px;}
+}
+@media screen and (max-width: 1340px)
+{
+.headertext{margin-left: 150px;}
+}
+
+@media screen and (max-width: 1170px)
+{
+.headertext{margin-left: 100px;}
+.button{margin-left: 100px;}
+.textbutton{margin-left: 145px;}
+}
+
+@media screen and (max-width: 1070px)
+{
+.headertext p{font-size: 50pt;}
+#underheader {font-size: 30px;}
+.imagessites{margin-top: 300px;}
+.imagessitesflags{margin-top: 300px;}
+#arrowdown{margin-bottom: -320px;}
+}
+
+@media screen and (max-width: 850px)
+{
+.headertext p{font-size: 40pt;}
+#underheader {font-size: 25px;}
+}
+
+@media screen and (max-width: 1014px)
+{
+#itemsbottom{margin-top: -40px;}
+}
+
+@media screen and (max-width: 842px)
+{
+.imagesbottom{margin-left: -60px;}
+#sitetwofooter{margin-left: 0px;}
+#sitethreefooter{margin-left: 60px;}
+#sitetwoonfooter{margin-left: 0px;}
+#sitethreeonfooter{margin-left: 60px;}
+}
+
+@media screen and (max-width: 660px)
+{
+#siteonefooter{margin-top: -200px;}
+#siteoneonfooter{margin-top: -200px;}
+#sitetwofooter{margin-top: -200px;}
+#sitethreefooter{margin-top: -200px;}
+#sitetwoonfooter{margin-top: -200px;}
+#sitethreeonfooter{margin-top: -200px;}
+}
+
+@media screen and (max-width: 1226px)
+{
+nav{display: grid; 
+grid-template-rows: 45px 45px;
+grid-template-columns: 140px 140px 140px 140px; row-gap: 8px; justify-content: center; column-gap: 30px;}
+.textmenu{font-size: 10.5pt;}
+#imageonmenu{margin-left: -30px; margin-right: 30px; width: 100px;}
+#accia{margin-left: 20px;}
+#copyright{margin-top: 20px;}
+}
+
+@media screen and (max-width: 780px)
+{
+.button{width: 300px;}
+#acciapohudet{font-size: 24pt;}
+}
+
+@media screen and (max-width: 814px)
+{
+nav{column-gap: 10px;}
+}
+
+@media screen and (max-width: 958px)
+{
+nav{width: 100%;}
+}
+
+@media screen and (max-width: 660px)
+{
+.headertext p{font-size: 40pt;}
+#underheader {font-size: 16px;}
+nav{column-gap: 10px;}
+}
+
+@media screen and (max-width: 736px)
+{
+nav
+{grid-template-columns: 100px 100px 100px 100px;
+column-gap: 4px; row-gap: 12px;}
+.textmenu{font-size: 9pt;}
+#phonenumber{font-size: 9pt;}
+#imageonmenu{width: 100px;}
+}
+
+@media screen and (max-width: 539px)
+{
+nav{grid-template-columns: 70px 70px 70px 70px;
+grid-template-rows: 20px 20px;}
+}
+
+@media screen and (max-width: 1555px)
+{
+#strawberry{margin-left: -20px;}
+}
+
+@media screen and (max-width: 1611px)
+{
+#carrot{margin-left: 0px;}
+}
+
+@media screen and (max-width: 1374px)
+{
+#leftpart{position: relative; left: -5%;}
+}
+
+@media screen and (max-width: 1092px)
+{
+#leftpart{ left: -10%; }
+}
+
+
+</style>	
+	
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
+	<body>
+	<!--Хедеры 3 цветов -->
+	<img class="headerimage" src="images/header_image.png" alt="header image green">
+	<img class="headerimage" style="z-index: -1;" src="images/header_image_purple.png" alt="header image purple">
+	<img class="headerimage" style="z-index: -2;" src="images/header_image_food.png" alt="header image food">
+	<img class="headerimage" style="z-index: -3;" src="images/header_orange.png" alt="header image orange">
+	
+	<!-- девочки -->
+	<img class="girl" src="images/girlgreen.png" alt="girl">
+	<img style="display: none; top: 10%;" class="girl" src="images/girlred.png" alt="girl">
+	
+	<nav>
+	<img class="menucontents" id="imageonmenu" src="images/energyDiet.png" style="margin-top: 25px; margin-left: 34px;" alt="Energy Diet">
+	<p class="menucontents textmenu" id="accia" ><strong>АКЦИЯ</strong></p>
+	<p class="menucontents textmenu" id="ed" >ЧТО ТАКОЕ ED</p>
+	<p class="menucontents textmenu" >НАБОРЫ</p>
+	<p id="easy" class="menucontents textmenu" >ED ЭТО ПРОСТО</p>
+	<p id="wetrusted" class="menucontents textmenu"  id="trust">НАМ ДОВЕРЯЮТ</p>
+	<p class="menucontents textmenu">СДЕЛАЙТЕ ВЫБОР</p>
+	<p id="phonenumber" class="menucontents textmenu" style=" color: black; "><strong>8 800 2 500 800</strong></p>
+	</nav>
+	
+	<div class="headertext">
+	<p style="margin-top: 220px;"><strong>ЕШЬ <br> И ХУДЕЙ! <br></strong></p> <p id="underheader" style="margin-top: 63px;">Экспресс-похудение с Energy Diet</p>
+	</div>
+	
+	
+	<!-- Зеленая кнопка-->
+	<img class="button" src="images/greenbutton.png" alt="green button">
+	<p class="textbutton" id='acciapohudet'>ПОХУДЕТЬ</p>
+	
+	<!--arrow down-->
+	<img id="arrowdown" src="images/ArrowDown.png" alt="arrowdown" style="position: relative; left: 49%; cursor: pointer;  z-index: 100; margin-left: auto; ">
+	
+	<!-- икноки сайтов-->
+	<img class="imagessites" id="siteone" src="images/vk.png" alt="vkontakte">
+	<img class="imagessites" id="sitetwo" style="margin-left: 40px;" src="images/youtube.png" alt="youtube">
+	<img class="imagessites" id="sitethree" style="margin-left: 80px;" src="images/instagram.png" alt="instagram">
+	
+	<!-- иконки сайтов при наведении -->
+	<img class="imagessitesflags" id="siteoneon" src="images/vk_cursor.png" alt="vkontakte cursor">
+	<img class="imagessitesflags" id="sitetwoon" style="margin-left: 40px;" src="images/youtube_cursor.png" alt="youtube cursor">
+	<img class="imagessitesflags" id="sitethreeon" style="margin-left: 80px;" src="images/instagram_cursor.png" alt="instagram cursor">
+	
+	<h2 id="secondHeader">ЧТО ТАКОЕ ENERGY DIET</h2>
+	<div class="secondpart"></div>
+	
+	
+	
+	<div id="whatised">
+	
+	<!--банка-->
+		<div id="bankimage">
+		<img id="banka" src="images/bank.png" alt="bank">
+		</div>
+		
+		<!--Левая половина банки-->
+		<div id="leftpart">
+			<img class="tower" src="images/francetower.png" alt="francetower" style="margin-top: 0px;cursor: pointer; float: left; margin-right: 40px;">
+			<div style="margin-top: -650px" class="leftbankpart">
+				<h2 class="h2textblock" style="line-height: 0.8;">Сделано во Франции</h2>
+				<p style="line-height: 1.2; cursor: pointer;">Соответствует международным</p><p style="line-height: 0.8; cursor: pointer;">стандартам качества</p>
+				<p style="line-height: 1.2; cursor: pointer; color: #a8a8a8;">Производитель сертифицирован по ISO</p>
+				<p style="line-height: 1.2; cursor: pointer; color: #a8a8a8;"> 22000:2005</p>
+			</div>
+			
+			<img class="tower" style="margin-top: 50px; cursor: pointer;" src="images/rst.png" alt="rst">
+			<div class="leftbankpart" style="margin-top: -90px;">
+				<h2 class="h2textblock" style="line-height: 0.8;">Качество<br>доказано</h2>
+				<p style="line-height: 1.2; font-size: 14pt; cursor: pointer;">• Добровольная сертификация</p>
+				<p style="line-height: 1.2; cursor: pointer; ">• Экспертиза РАМН</p>
+				<p style="line-height: 1.2; cursor: pointer; ">• Независимая экспертиза</p>
+				<p style="line-height: 1.2; cursor: pointer;  margin-left: 10px;">Главного экспертно - </p>
+				<p style="line-height: 1.2; cursor: pointer;  margin-left: 10px;">аналитического центра</p>
+				<p style="line-height: 1.2; cursor: pointer;  margin-left: 10px;">«СОЭКС»</p>
+			</div>
+			
+			<img class="tower" style="margin-top: 50px; cursor: pointer;" src="images/calorie.png" alt="calorie">
+			<div class="leftbankpart" style="margin-top: -100px;">
+				<h2 class="h2textblock" style="line-height: 0.8;">Низкокалорийно</h2>
+				<p style="line-height: 1.2;  cursor: pointer;">В одной порции всего 200 ккал</p>
+			</div>
+		</div>
+		
+		<!--Правая половина банки-->
+		<div id="rightpart">
+			<img class="towerright" id="strawberry" src="images/Strawberry.png" alt="francetower">
+			<div style="" class="rightbankpart">
+				<h2 class="h2textblock" style="line-height: 0.8;">ED - это вкусно!</h2>
+				<p style="line-height: 1.2;  cursor: pointer;">Выбери свой вкус</p><p style="line-height: 0.8; cursor: pointer;">или смешай несколько!</p>
+			</div>
+			
+			<img id="carrot" class="towerright" style="margin-top: 50px;  cursor: pointer;" src="images/polezno.png" alt="rst">
+			<div class="rightbankpart" style="margin-top: -70px;">
+				<h2 class="h2textblock" style="line-height: 0.8;">ED - это полезно!</h2>
+				<p style="line-height: 1.2; cursor: pointer;">•Баланс белков, жиров и углеводов</p>
+				<p style="line-height: 1.2; cursor: pointer;">•12 основных витаминов и 11</p>
+				<p style="line-height: 1.2; cursor: pointer;">минералов</p>
+				<p style="line-height: 1.2; cursor: pointer;">•18 аминокислот</p>
+				<p style="line-height: 1.2; cursor: pointer;">•Комплекс ферментов и клетчатка</p>
+				<p style="line-height: 1.2; cursor: pointer;">•Ацерола и королевское желе</p>
+			</div>
+			
+			<img class="towerright" id="coffee" style="margin-top: 50px; cursor: pointer;" src="images/coffee.png" alt="calorie">
+			<div class="rightbankpart" style="margin-top: -100px;">
+				<h2 class="h2textblock" style="line-height: 0.8;">ED - это выгодно!</h2>
+				<p style="line-height: 1.2; cursor: pointer; margin-left: 10px;">Стоимость 1 порции готового</p>
+				<p style="line-height: 1.2; cursor: pointer; margin-left: 10px;">коктейля = стоимости 1 чашки</p>
+				<p style="line-height: 1.2; cursor: pointer; margin-left: 10px;">кофе в кофейне</p>
+			</div>
+		</div>
+	
+	</div>
+	
+	<!-- третья часть -->
+	<h2 id='itseasy' style="position: relative; margin-left: auto;  text-align: center; font-size: 36pt; cursor: pointer; color: #282528"; >ENERGY DIET</h2>
+	<h3 style=" margin-top: 14px; text-align: center; cursor: pointer; font-size: 18pt; color: #282528;">ЭТО ПРОСТО!</h3>
+	
+	<div id="thirdpart">
+	<img src="images/choose.png" alt="choose">
+	<img style="margin-top: 20px;" src="images/arrow.png" alt="choose">
+	<img src="images/buy.png" alt="buy">
+	<img style="margin-top: 20px" src="images/arrow.png" alt="choose">
+	<img src="images/eat.png" alt="eat">
+	<img style="margin-top: 20px;" src="images/arrow.png" alt="choose">
+	<img src="images/thin.png" alt="thin">
+	<p class="undertext" style="margin-right: 100px;">Выбирай</p><p>
+	<p class="undertext" style="margin-right: 140px;">Покупай</p><p>
+	<p class="undertext" style="margin-right: 160px;">Ешь</p><p>
+	<p class="undertext" >Худей</p>
+	</div>
+	
+	<h2 id="trustworthy" style="font-size: 57pt; color: #282528; text-align: center; cursor: pointer; margin-top: 216px;">ДОВЕРЯЮТ ЗВЕЗДЫ</h2>
+	
+	<div id="kavich">
+	<img src="images/kav.png" alt="kav">
+	</div>
+	
+	
+	<div id="trusttext" style="width: 1200px; margin-right: 0px;">
+	<img id="leftarrow" src="images/firstarrowleft.png" alt="arrowleft" style="position: absolute; cursor: pointer; flaot: left;  margin-top: 75px; ">
+	<img id="rightarrow" src="images/firstarrowright.png" alt="arrowright" style="position: absolute; cursor: pointer; flaot: left;  margin-top: 75px; ">
+	<p id="changetext">Для меня это реальное спасение! Никогда нет времени на еду. Прекрасно знаю, что нужно правильно питаться и находить на это время, но постоянно жертвую здоровьем. Поэтому Energy Diet - идеальная штука для меня. Нет времени заезжать в ресторан - просто покупаю пакет полуторапроцентного молока, развожукоктейль прямо в машине, выпиваю - и прощай, чувство голода. Я бодр, свеж и - появляется энергия. Видимо, energy не просто так в названии присутствует. И самое главное - это реально вкусно. Я люблю Energy Diet: капучино, шоколад, ваниль, банан. Но больше всего мне по вкусу банан и ваниль. Ну, они такие... самые натуральные... Ягодный я ещё не пробовал, но он у меня тоже есть
+	</div>
+	
+	<img id="changephoto" src="images/timurphoto.png" alt="photo" >
+	<img id="photoback" src="images/greentimurcircle.png" alt="background" >
+	
+	<h2 id="changename" style="position: relative;  cursor: pointer; text-align: center; color: #282528;">Тимур Родригез</h2>
+	<p id="changecomment" style="position: relative;  cursor: pointer; text-align: center; color: #646464;">Шоумен, певец,<br>телеведущий</p>
+	
+	<div id="circles">
+	<img id="eclipseone" src="images/eclipse.png" alt="eclipse">
+	<img id="ecliplsetwo" src="images/ecliplseempty.png" alt="ecliplseempty">
+	<img id="ecliplsethree" src="images/ecliplseempty.png" alt="ecliplseempty">
+	<img id="ecliplsefour" src="images/ecliplseempty.png" alt="ecliplseempty">
+	</div>
+	
+	<iframe style="position: relative;  margin-left: 0px; margin-right: 0px; padding: 0px; margin-top: 75px;" width="100%" height="765px" src="https://www.youtube.com/embed/41Y4nNrSHWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="footer">
+	<img  src="images/energyDiet.png" style="margin-top: 110px; margin-left: 13.4%; cursor: pointer;" alt="Energy Diet">
+	<p style="color: #a2a2a2; font-size: 13pt; font-family: OpenSans; margin-left: 13.4%; margin-top: 0.6%; cursor: pointer;">Продукты Energy Diet призваны решать<br>
+	проблему быстрого, полезного и<br>
+	безопасного питания, продлевая тем<br>
+	самым человеку годы активной жизни
+	</p>
+	<p id="copyright">
+	© 2015 Energy Diet. Все права защищены.
+	</p>
+	
+	<div id="itemsbottom" style="width: 220px; height: 68px;">
+	<img class="imagessites imagesbottom"  id="siteonefooter" src="images/vkoff.png" alt="vkontakte">
+	<img class="imagessites imagesbottom"   id="sitetwofooter"  src="images/youtubeoff.png" alt="youtube">
+	<img class="imagessites imagesbottom"   id="sitethreefooter"  src="images/instagramoff.png" alt="instagram">
+	
+	<img class="imagessites imagesbottom" id="siteoneonfooter"  src="images/vkbig.png" alt="vkontakte">
+	<img class="imagessites imagesbottom" id="sitetwoonfooter"  src="images/youtubebig.png" alt="youtube">
+	<img class="imagessites imagesbottom" id="sitethreeonfooter"   src="images/instagrambig.png" alt="instagram">
+	</div>
+	
+	</div>
+	
+	</body>
+</html>

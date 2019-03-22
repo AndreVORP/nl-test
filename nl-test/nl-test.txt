@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Задачник</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	
+	
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$('#authorisation').click(function() {
+    $.ajax({
+        url: 'action.php',
+        type: 'POST',
+        data: {
+            adminlog: $('#logininput').val(),
+            adminpass: $('#logininput').val(),
+        },              
+    });
+});
+});
+</script>
+	
+	
+	<body>
+	<form id="admin" name="adminlogin" method="post" action="action.php">
+	<h2>Вход в окно администратора</h2>
+	<p>Логин:</p>
+	<input id="logininput" type="text" name="adminlog" size="40">
+	<p>Пароль:</p>
+	<input id="passwordinput" type="text" name="adminpass" size="40"><br>
+	<input id="authorisation"type="submit" value="Авторизироваться">
+	</form>
+	</body>
+	
+	<div id="logged">Вы зашли!</div>
+	<div id="wronglog">Некорректные данные!</div>
+
+	<!--<div class="page">
+		<h2 class="Username">Андрей</h2>
+		<h2 class="email">odaving@gmail.com</h2>
+		<div class="text">Повесить шторы</div>
+		<div class="status">Выполняется</div>
+	</div>	-->
+</html>
